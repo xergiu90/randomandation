@@ -1,0 +1,58 @@
+
+		<template name="home">
+	
+	
+				 <!--=============== Main Parts Section ===============-->
+            <section class="parts gray-bg">
+                <div class="container text-center">
+                    <header>
+                        <h2 class="has-lines">Recommended Videos</h2>
+                    </header>
+					
+					Top Preferred Genres:
+					{{#each getGenres}}
+						{{this}},
+					{{/each}}
+
+                    <div class="row d-flex align-items-stetch">
+					
+					{{#each getVideos}}
+					
+                        <!-- Part -->
+                        <div class="col-lg-3">
+                            <div class="part shadow-on-hover pattern-memphis-on-hover">
+							  <a href="{{url}}" target="_blank">
+								<div id="products" class="row list-group">
+											<div class="thumbnail" style="height:20vh;">
+												<img class="group list-group-image" style="width:15vh;height:15vh;" src="{{picture}}" alt="" />
+												
+											</div>
+									<div class="caption">
+													<h4 class="group inner list-group-item-heading">
+														{{title}}</h4>
+														<br/>
+                                     <p style="color:red">{{uname}}</p>
+                                   
+												</div>
+									
+								</div>
+							  </a>
+					
+								
+							</div>
+                        </div><!-- /. Part -->
+
+						
+						{{/each}}
+						 
+						
+						
+						
+						
+                    </div>
+                </div>
+            </section>
+            <!--=============== /. Main Parts Section ===============-->
+
+
+	   </template>

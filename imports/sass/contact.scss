@@ -1,0 +1,96 @@
+/* ===============================================
+     CONTACT DETAILS SECTION [CONTACT PAGE]
+   =============================================== */
+section.contact-us-details {
+    header {
+        margin-bottom: 40px;
+    }
+    #map {
+        width: 100%;
+        height: 100%;
+        min-height: 400px;
+    }
+
+    .contact-details {
+        min-height: 400px;
+        padding: 30px 40px;
+        height: 100%;
+    }
+
+    .info {
+        i {
+            color: $color-primary;
+            min-width: 30px;
+            font-size: 1.2em;
+        }
+    }
+
+    p {
+        margin-bottom: 0;
+    }
+
+    li {
+        margin-bottom: 15px;
+    }
+
+    p, a {
+        color: #555;
+        font-weight: 300;
+        font-size: 1.1em;
+    }
+
+    .social-icons {
+        a {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            line-height: 30px;
+            border: 1px solid #eee;
+            font-size: 0.85em;
+            text-align: center;
+
+            &.facebook {
+                border-color: $color-facebook;
+                color: $color-facebook;
+                &:hover {
+                    color: #fff;
+                    background: $color-facebook;
+                }
+            }
+            &.twitter {
+                border-color: $color-twitter;
+                color: $color-twitter;
+                &:hover {
+                    color: #fff;
+                    background: $color-twitter;
+                }
+            }
+            &.instagram {
+                border-color: $color-instagram;
+                color: $color-instagram;
+                &:hover {
+                    color: #fff;
+                    background: $color-instagram;
+                }
+            }
+            &.google-plus {
+                border-color: $color-google-plus;
+                color: $color-google-plus;
+                &:hover {
+                    color: #fff;
+                    background: $color-google-plus;
+                }
+            }
+        }
+    }
+}
+
+
+/* CONTACT DETAILS SECTION MEDIAQUERY ------------------------ */
+@media (max-width: $screen-lg) {
+    section.contact-us-details {
+        #map {
+            margin-top: 40px;
+        }
+    }
+}

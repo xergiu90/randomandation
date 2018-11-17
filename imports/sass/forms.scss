@@ -1,0 +1,562 @@
+/* ===================================================
+        FORM ELEMENTS
+    ================================================= */
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 300;
+    color: #555;
+}
+
+textarea {
+    max-height: 150px;
+    resize: vertical;
+}
+
+
+.form-group {
+    position: relative;
+    margin-bottom: 40px;
+}
+
+.input-material {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #ddd;
+    padding: 5px 0;
+    background: none;
+    transition: all 0.3s;
+    font-family: $base-font-family;
+    font-weight: 300;
+    outline: none;
+
+    &[type="password"] {
+        color: $color-primary;
+    }
+
+    @include placeholder() {
+        font-weight: 300;
+        font-family: $base-font-family;
+        color: #aaa;
+    }
+
+    & + label {
+        font-size: 1em;
+        font-weight: 300;
+        color: #aaa;
+        transition: all 0.3s;
+        font-family: $base-font-family;
+        position: absolute;
+        top: 5px;
+        left: 0;
+        cursor: text;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -o-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        transform-origin: top left;
+
+        &.active {
+            transform: translateY(-30px);
+            font-size: 0.85em;
+            color: $color-primary;
+        }
+    }
+
+    &:focus {
+        border-color: $color-primary;
+    }
+}
+
+.checkbox-template {
+    display: none;
+    & + label {
+        position: relative;
+        padding-left: 30px;
+        font-size: 1em;
+        font-weight: 300;
+        color: #777;
+        font-family: $base-font-family;
+        cursor: pointer;
+        &::before {
+            content: '';
+            width: 20px;
+            height: 20px;
+            border: 1px solid #ddd;
+            display: inline-block;
+            position: absolute;
+            top: calc(50% - 10px);
+            left: 0;
+        }
+        &::after {
+            content: '\f00c';
+            width: 20px;
+            height: 20px;
+            line-height: 20px;
+            text-align: center;
+            background: $color-primary;
+            color: #fff;
+            display: inline-block;
+            font-size: 0.65em;
+            position: absolute;
+            top: calc(50% - 10px);
+            left: 0;
+            font-family: 'FontAwesome';
+            transition: all 0.3s;
+            opacity: 0;
+        }
+    }
+
+    &:checked + label {
+        &::after {
+            opacity: 1;
+        }
+    }
+}
+.radio-template {
+    display: none;
+    & + label {
+        position: relative;
+        padding-left: 30px;
+        font-size: 1em;
+        font-weight: 300;
+        color: #777;
+        font-family: $base-font-family;
+        cursor: pointer;
+        &::before {
+            content: '';
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: #eee;
+            display: inline-block;
+            position: absolute;
+            top: calc(50% - 10px);
+            left: 0;
+        }
+        &::after {
+            content: '';
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: #fff;
+            border: 6px solid $color-primary;
+            display: inline-block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            transition: all 0.3s;
+            opacity: 0;
+        }
+    }
+
+    &:checked + label {
+        &::after {
+            opacity: 1;
+        }
+    }
+}
+
+.form-control {
+    width: 100%;
+    border-radius: 0;
+    border-color: #ddd;
+    padding: 10px 20px;
+    font-family: $base-font-family;
+
+    &:focus {
+        border-color: $color-primary;
+    }
+
+    @include placeholder() {
+        color: #bbb;
+        font-style: italic;
+        font-weight: 300;
+        font-family: $base-font-family;
+    }
+}
+
+textarea.form-control {
+    min-height: 150px;
+}
+
+.pages-quantity {
+    .minus-btn, .plus-btn {
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+        color: #fff;
+        border-radius: 50%;
+        text-align: center;
+        background: $color-primary;
+        margin-right: 5px;
+        cursor: pointer;
+        font-size: 0.7em;
+        user-select: none;
+        -webkit-user-select: none;
+        -o-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        -webkit-user-select: none;
+
+        i {
+            transform: translateY(2px);
+            font-size: 1.2em;
+        }
+    }
+
+     input {
+         width: 40px;
+         height: 40px;
+         line-height: 40px;
+         color: #333;
+         border-radius: 50%;
+         text-align: center;
+         border: 1px solid #ccc;
+         margin-right: 5px;
+         display: inline-block;
+     }
+}
+input:checked + .btn-gradient {
+    color: #fff !important;
+    @extend .has-shadow;
+    &::before {
+        opacity: 1;
+        @extend .has-shadow;
+    }
+}
+
+input.hidden {
+    display: none;
+}
+
+
+/* ===================================================
+        GET A QUOTE FORM
+    ================================================= */
+.get-quote {
+    padding: 20px 40px;
+    background: #fff;
+    .title {
+        margin-bottom: 20px;
+    }
+    ul.currency li {
+        margin: 0;
+    }
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    input.hidden {
+        display: none;
+    }
+
+    .btn-gradient {
+        margin-left: 3px;
+        font-size: 0.9em;
+        padding: 2px 5px;
+        margin-right: 3px !important;
+    }
+
+    .price {
+        color: #333;
+        font-size: 1.2em;
+        -webkit-user-select: none;
+        -o-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        line-height: 1em;
+    }
+}
+
+
+.modal {
+    background: rgba(0, 0, 0, 0.75);
+
+    .close-btn {
+        width: 40px;
+        height: 40px;
+        line-height: 43px;
+        text-align: center;
+        @include linear-gradient(to left, $color-secondary, $color-primary);
+        color: #fff;
+        position: absolute;
+        top: 0;
+        right: 0;
+        font-size: 0.9em;
+        cursor: pointer;
+    }
+    .get-quote {
+        padding: 40px 60px;
+    }
+}
+
+.modal-dialog {
+    margin-top: 50px;
+    max-width: 800px;
+}
+
+
+/* ===================================================
+        ORDER FORM
+    ================================================= */
+section.order-form {
+
+    .steps-header {
+        padding: 0;
+
+        .step {
+            padding: 0 15px;
+            height: 50px;
+            line-height: 50px;
+            width: 33.3333%;
+            font-size: 1.1em;
+            font-weight: 300;
+            cursor: pointer;
+
+            &.active {
+                @include linear-gradient(to right, $color-secondary, $color-primary);
+                color: #fff;
+                border-color: transparent !important;
+            }
+
+            &:nth-of-type(2) {
+                border-right: 1px solid #ddd;
+            }
+        }
+    }
+
+
+    .step-body {
+        padding: 60px 30px 30px;
+        display: none;
+
+        &.is-showing {
+            display: block;
+        }
+
+        .form-group {
+            margin-bottom: 30px;
+        }
+
+        ul {
+            margin-bottom: 0;
+        }
+
+        input, textarea {
+            @include placeholder() {
+                font-style: normal;
+                color: #aaa;
+                font-size: 0.95em;
+            }
+        }
+
+        label {
+            color: #333;
+            &[for="file"] {
+                cursor: pointer;
+                padding: 10px 30px;
+                background: #f5f5f5;
+                display: inline-block;
+                margin: 10px 0;
+                span {
+                    font-size: 1.05em;
+                    color: #333;
+                    font-style: normal;
+                    width: 300;
+                    transition: all 0.3s;
+                }
+
+                &:hover {
+                    span {
+                        color: #fff;
+                    }
+                }
+            }
+
+            i {
+                width: 20px;
+                height: 20px;
+                border-radius: 50%;
+                line-height: 20px;
+                color: #999;
+                background: #eee;
+                text-align: center;
+                margin-left: 5px;
+                font-size: 0.7em;
+                cursor: pointer;
+            }
+        }
+
+        .btn-gradient {
+            background: #f5f5f5;
+            padding: 8px 20px;
+            font-size: 0.85em;
+            color: #444;
+            margin-bottom: 10px;
+        }
+
+        small {
+            color: #999;
+            font-style: italic;
+            margin-left: 20px;
+        }
+    }
+
+    .bs-select .dropdown-toggle {
+        padding: 12px 20px;
+
+        span {
+            color: #777;
+        }
+
+        &::after {
+            margin-left: -20px;
+        }
+    }
+
+
+    .spaced-type {
+        margin-left: 30px;
+    }
+
+    .total-price {
+        padding: 15px 40px;
+        background: #fff;
+        margin: 20px 0;
+        font-size: 1.2em;
+    }
+
+    ul.spaced-type {
+        a {
+            margin-bottom: 0 !important;
+        }
+    }
+
+    .order-summary {
+        padding: 20px 15px;
+        border: 1px solid $color-primary;
+        margin: 0;
+        margin-top: 20px;
+
+        li {
+            padding: 7px;
+            color: #333;
+            font-weight: 300;
+            span {
+                color: $color-primary;
+                margin-left: 5px;
+            }
+        }
+    }
+
+    ul.nav-tabs {
+        margin-top: 20px;
+        a {
+            border-radius: 0 !important;
+            border: 1px solid #ddd !important;
+            color: #555 !important;
+            padding: 10px 30px !important;
+            font-size: 0.95em !important;
+
+            &.active {
+                border-color: $color-primary !important;
+                @include linear-gradient(to right, $color-secondary, $color-primary);
+                color: #fff !important;
+            }
+        }
+    }
+
+    .tab-pane {
+        padding: 30px 20px 0 20px;
+        border: 1px solid #ddd;
+        border-top: 0;
+        margin-bottom: 30px;
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            margin-bottom: 0;
+            text-align: right;
+            padding-right: 10px;
+            color: #333;
+        }
+
+        .col-left {
+            label {
+                min-width: 70px;
+            }
+        }
+        .col-right {
+            label {
+                min-width: 155px;
+            }
+        }
+    }
+    .step-nav {
+        margin-top: 20px;
+    }
+
+    .additionl-service {
+        padding: 20px;
+        margin-right: 15px;
+        border: 1px solid $color-primary;
+        cursor: pointer;
+
+        strong {
+            display: block;
+        }
+        label::before, label::after {
+            top: 0;
+        }
+    }
+}
+
+
+/* ORDER FORM MEDIAQUERY ---------------------------------- */
+@media (max-width: $screen-lg) {
+    section.order-form {
+        label.text-right {
+            text-align: left !important;
+        }
+        .tab-pane {
+            label {
+                width: 100% !important;
+                text-align: left !important;
+            }
+        }
+        .step-nav {
+            a {
+                margin-bottom: 20px;
+                text-align: center;
+                &.prev {
+                    border: 1px solid #ddd;
+                    padding: 4px 20px;
+                    border-radius: 50px;
+                }
+
+                &:last-of-type {
+                    margin-bottom: 0;
+                }
+            }
+        }
+        .steps-header {
+            flex-wrap: wrap !important;
+            .step {
+                width: 100% !important;
+                height: 40px !important;
+                line-height: 40px !important;
+                border-bottom: 1px solid #fff !important;
+
+
+                &.active {
+                    border-color: #fff !important;
+                }
+            }
+        }
+    }
+}

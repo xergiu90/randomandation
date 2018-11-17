@@ -1,0 +1,248 @@
+
+<head>
+		 <meta charset="utf-8">
+      <!-- Responsive meta -->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <!-- IE Compatibility meta -->
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <!-- Description meta -->
+      <meta name="description" content="...">
+      <!-- Author meta -->
+      <meta name="author" content="...">
+
+      <!-- Page Title -->
+      <title>Randomandation</title>
+
+      <!-- Favicon -->
+      <link rel="shortcut icon" href="img/logo.png">
+
+      <!-- Font Awesome Stylesheet -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+      <!-- Custom Font Icons Stylesheet -->
+      <link rel="stylesheet" href="https://file.myfontastic.com/VzbhHsppHvzSAY9cDQTJaW/icons.css">
+	  
+	  
+</head>
+
+
+		<template name="layout">
+
+			<main class='main'>
+			
+			
+					
+							{{#if currentUser }}
+			
+			            <!--=============== Navbar ===============-->
+            <nav class="navbar fixed-top navbar-toggleable-md">
+                <div class="container">
+
+                    <div class="navbar-header">
+                        <!-- Navbar Brand -->
+                        <a href="/" class="navbar-brand">
+                            <img src="img/logo.png" alt="Vuapaper" width="140">
+                        </a>
+
+                        <!-- Toggle Button -->
+                        <button type="button" class="navbar-toggler navbar-toggler-right" data-toggle="collapse" data-target="#navbarcollapse" aria-controls="navbarcollapse" aria-expanded="false" aria-label="Toggle navigation">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </button>
+                    </div>
+
+					
+                    <div class="collapse navbar-collapse" id="navbarcollapse">
+                        <!-- Navbar Menu -->
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item">
+                                <a href="/" class="nav-link animsition-link active">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/friends" class="nav-link animsition-link">Friends</a>
+                            </li>
+							
+							<li>
+								<!-- Dropdown menu -->
+							   <div class="dropdown user-dropdown">
+									<a class="btn dropdown-toggle" href="#" id="notdropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+										
+										<div class="d-flex align-items-center">
+											<span class="name">
+												{{#unless $eq mescount 0 }}<span class="msg-counter" style="color:red">{{mescount}}</span>{{/unless}}
+											</span><i class="fa fa-bell"></i>
+										</div>
+									</a>
+									<div class="dropdown-menu" aria-labelledby="notdropdown">
+										{{#each notify}}
+											<a class="dropdown-item">{{msg}}</a>
+										{{/each}}
+									</div>
+								</div>
+							
+							</li>
+                           
+							
+							
+                        </ul>
+						
+						{{#if currentUser }}
+							<!-- Dropdown menu -->
+						   <div class="dropdown user-dropdown">
+								<a class="btn dropdown-toggle" href="#" id="userdropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+									{{#with currentUser}}
+									<div class="d-flex align-items-center">
+										<div class="avatar">
+											<img src="{{getUserPhoto}}" alt="..." class="img-fluid">
+										</div>
+										<span class="name">Hi 
+										
+											{{#with profile}}
+												{{name}}
+											{{/with}}
+										
+										</span>
+									</div>
+									{{/with}}
+								</a>
+								<div class="dropdown-menu" aria-labelledby="userdropdown">
+									<a class="dropdown-item" href="/profile">Profile Page</a>
+									<a class="dropdown-item" id="logout">Logout</a>
+								</div>
+							</div>
+						{{/if}}
+						
+                    </div>
+
+                </div>
+            </nav><!--=============== /. Navbar ===============-->
+
+							{{/if}}
+							
+			<div id="notify-bar" style="display:none;position:fixed;bottom:0%;z-index:999;width:100%" class="alert alert-success">
+			  <strong>Success!</strong>  <span id="notify"></span>
+			</div>
+			
+			<div id="notifyErr-bar" style="display:none;position:fixed;bottom:0%;z-index:999;width:100%" class="alert alert-danger">
+			  <strong>Note!</strong>  <span id="notifyErr"></span>
+			</div>
+
+			
+			{{> Template.dynamic template=main}}
+			
+			
+			
+				
+             <!--=============== Footer ===============-->
+             <footer class="main-footer">
+                 <div class="container">
+                     <div class="row">
+
+                         <!-- Logo & Information Column -->
+                         <div class="info col-md-4">
+                             <div class="logo">
+                                 <img src="img/logo.png" alt="Vuapaper" width="150">
+                             </div>
+                             <p>Randomandation.</p>
+
+                             <ul class="contact-info list-unstyled">
+                                 <li>
+                                     <p>
+                                         <i class="fa fa-map-marker"></i>
+                                         Romania, Romania
+                                     </p>
+                                 </li>
+
+                                 <li>
+                                     <i class="fa fa-envelope"></i>
+                                     <a href="mailto:support@Randomandation.com">Support@Randomandation.com</a>
+                                 </li>
+                                 <li>
+                                     <i class="fa fa-phone"></i>
+                                     <a href="tel:++‬96895444316">+‬212 13212313</a>
+                                 </li>
+                             </ul>
+                         </div>
+
+                        <!-- Newsletter Column -->
+                         <div class="newsletter col-md-4">
+
+                             <ul class="social-icons list-inline">
+                                 <li class="list-inline-item">
+                                     <a href="https://www.facebook.com/Randomandation/" target="_blank"><i class="fa fa-facebook"></i></a>
+                                 </li>
+                                 <li class="list-inline-item">
+                                     <a href="https://twitter.com/Randomandation" target="_blank"><i class="fa fa-twitter"></i></a>
+                                 </li>
+                                 <li class="list-inline-item">
+                                     <a href="https://www.instagram.com/Randomandation/" target="_blank"><i class="fa fa-instagram"></i></a>
+                                 </li>
+                                 <li class="list-inline-item">
+                                     <a href="https://www.youtube.com/c/Randomandation" target="_blank"><i class="fa fa-youtube-play"></i></a>
+                                 </li>
+                             </ul>
+                         </div>
+                     </div>
+                 </div>
+
+
+                <!-- Copyrights -->
+                 <div class="copyrights">
+                     <div class="container">
+                         <div class="row">
+                             <div class="col-md-6">
+                                 <p>Copyright &copy; <a href="/" class="animsition-link">Randomandation</a> 2017. All Rights Reserved.</p>
+                             </div>
+                         </div>
+                     </div>
+                 </div>
+             </footer>
+             <!--=============== /. Footer ===============-->
+
+
+
+             <!--=============== Scroll To Top ===============-->
+             <div id="scrollTop">
+                 <div class="d-flex align-items-center justify-content-end">
+                     <i class="fa fa-long-arrow-up"></i>
+                     <span>To Top</span>
+                 </div>
+             </div>
+             <!--=============== /. Scroll To Top ===============-->
+
+			</main>
+
+			   
+				
+				<script type="text/javascript">
+					jQuery(function(){
+						jQuery("a.bla-1").YouTubePopUp({
+							autoplay: 1
+						});
+					});
+				</script>
+			<script>
+
+			$('.nav-item a').click(function(e) {
+			
+				$('.nav-item a').removeClass('active');
+				$(this).addClass('active');
+			});
+						
+							function notify(msg)
+				{
+							$('#notify-bar').show();
+							$('#notify').html(msg);
+							setTimeout(function(){ $('#notify-bar').hide(); }, 3000);
+				}
+				function notifyErr(msg)
+				{
+							$('#notifyErr-bar').show();
+							$('#notifyErr').html(msg);
+							setTimeout(function(){ $('#notifyErr-bar').hide(); }, 3000);
+				}
+				
+			</script>	
+			
+		</template>

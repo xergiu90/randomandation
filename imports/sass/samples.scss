@@ -1,0 +1,76 @@
+/* ===============================================
+     SAMPLES SECTION [SAMPLES PAGE]
+   =============================================== */
+section.samples-page {
+    @extend section.features;
+
+    .item {
+        padding: 30px !important;
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+        border: none !important;
+        border-top: 2px solid $color-primary !important;
+
+        &::before {
+            content: '';
+            width: 100%;
+            height: 100%;
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: none;
+            border: 2px solid $color-primary;
+            border-top: none;
+            z-index: -1;
+            transition: all 0.4s;
+            opacity: 0;
+        }
+
+        &:hover {
+            &::before {
+                opacity: 1;
+            }
+        }
+
+        h3 {
+            font-weight: 500;
+        }
+
+        p {
+            margin: 20px 0;
+            font-weight: 400;
+        }
+
+        li {
+            color: #333;
+            font-weight: 300;
+            margin-bottom: 8px;
+            span {
+                color: #aaa;
+            }
+            i {
+                color: $color-primary;
+                min-width: 20px;
+            }
+        }
+
+        .category {
+            background: $color-primary;
+            color: #fff;
+            transform: rotate(-45deg);
+            position: absolute;
+            bottom: 30px;
+            right: -50px;
+            height: 35px;
+            line-height: 35px;
+            width: 200px;
+            text-align: center;
+        }
+
+        a.btn {
+            margin-top: 15px;
+        }
+    }
+}

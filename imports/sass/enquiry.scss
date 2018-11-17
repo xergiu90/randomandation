@@ -1,0 +1,70 @@
+/* ===============================================
+     ENQUERY SECTION [ENQUERY & REPORT PAGE]
+   =============================================== */
+section.enquiry {
+
+    .form-holder {
+        background: #fff;
+        padding: 50px;
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        label {
+            font-size: 1.1em;
+            color: #333;
+
+            span {
+                font-size: 0.8em;
+                color: #aaa;
+                font-style: italic;
+            }
+
+            &.required {
+                &::after {
+                    content: '*';
+                    display: inline-block;
+                    color: $color-primary;
+                    margin-left: 5px;
+                }
+            }
+
+            &[for="file"] {
+                cursor: pointer;
+                padding: 10px 30px;
+                background: #f5f5f5;
+                display: inline-block;
+                margin: 10px 0;
+                span {
+                    font-size: 0.95em;
+                    color: #333;
+                    font-style: normal;
+                    width: 300;
+                    transition: all 0.3s;
+                }
+
+                &:hover {
+                    span {
+                        color: #fff;
+                    };
+                }
+            }
+        }
+
+        .input-file {
+            width: 0.1px;
+            height: 0.1px;
+            opacity: 0;
+            overflow: hidden;
+            position: absolute;
+            z-index: -1;
+        }
+    }
+
+    .payment-link {
+        img {
+            min-width: 50px;
+        }
+    }
+}

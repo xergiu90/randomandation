@@ -1,0 +1,128 @@
+
+		<template name="friends">
+	
+	
+				 <!--=============== Main Parts Section ===============-->
+            <section class="parts gray-bg">
+                <div class="container text-center">
+                    <header>
+                        <h2 class="has-lines">Friend List</h2>
+                    </header>
+
+                    <div class="row d-flex align-items-stetch">
+                        <!-- Part -->
+                        <div class="col-lg-6">
+                            <div class="part shadow-on-hover pattern-memphis-on-hover">
+								
+								
+								<div class="form-group">
+								  <label for="usr">Search For a Friend</label>
+								  <input  type="text" class="form-control" id="searchbtn">
+								  <select id="clients" class="form-control" multiple>
+									{{#each getClients}}
+												
+														<option  value="{{_id}}">{{#with profile}}{{name}}{{/with}}</option>
+												
+									{{/each}}
+								  </select>
+								  
+								</div>
+								<img style="width:5vh;height:5vh;" src="{{getUserImage}}"/>
+								
+								{{#unless isOldRequest}}
+									{{#unless isRequest}}
+										<button class="btn-template" id="addfriend" type="submit">Add Friend</button>
+									{{/unless}}
+									
+									{{#if isRequest}}
+										<button class="btn btn-danger" id="cancelrequest" type="submit">Cancel Request</button>
+									{{/if}}
+								{{/unless}}
+							</div>
+                        </div><!-- /. Part -->
+
+						 <!-- Part -->
+                        <div class="col-lg-6">
+                            <div class="part shadow-on-hover pattern-memphis-on-hover">
+								
+							<div class="form-group">
+							  <label for="usr">Friend Requests</label>
+							</div>	
+							
+							   <div class="table-holder has-shadow table-responsive">
+                                        <table class="table table-striped">
+                                            <thead>
+                                                <tr>
+                                                    <th></th>
+                                                    <th>Name</th>
+                                                    <th>Response</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+											{{#each getOthersRequests}}
+                                                <tr>
+                                                    <td>{{#with services}}{{#with google}}<img style="width:5vh;height:5vh;" src="{{picture}}"/>{{/with}}{{/with}}</td>
+                                                    <td>{{#with profile}}{{name}}{{/with}}</td>
+                                                    <td>
+														<button class="btn btn-success acceptbtn" id="{{_id}}" type="submit">Accept</button>
+														<button class="btn btn-danger rejectbtn" id="{{_id}}" type="submit">Reject</button>
+													</td>
+                                                </tr>
+											{{/each}}
+                                            </tbody>
+                                        </table>
+										
+                                    </div>
+					
+					
+								
+							</div>
+                        </div><!-- /. Part -->
+						
+						 <!-- Part -->
+                        <div class="col-lg-12">
+                            <div class="part shadow-on-hover pattern-memphis-on-hover">
+								
+								<div class="form-group">
+								  <label for="usr">Friends</label>
+								  
+								    <div class="table-holder has-shadow table-responsive">
+                                        <table class="table table-striped">
+                                            <thead>
+                                                <tr>
+                                                    <th></th>
+                                                    <th>Name</th>
+                                                    <th>Actions</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+											{{#each getFriends}}
+                                                <tr>
+                                                    <td>{{#with services}}{{#with google}}<img style="width:5vh;height:5vh;" src="{{picture}}"/>{{/with}}{{/with}}</td>
+                                                    <td>{{#with profile}}{{name}}{{/with}}</td>
+                                                    <td>
+														<button class="btn btn-danger removefriend" id="{{_id}}" type="submit">Unfriend</button>
+													</td>
+                                                </tr>
+											{{/each}}
+                                            </tbody>
+                                        </table>
+										
+                                    </div>
+								  
+								</div>
+								
+							</div>
+							
+                        </div><!-- /. Part -->
+						
+						
+						
+						
+                    </div>
+                </div>
+            </section>
+            <!--=============== /. Main Parts Section ===============-->
+
+
+	   </template>

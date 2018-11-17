@@ -1,0 +1,21 @@
+/* ===============================================
+     SERVICES SECTION [SERVICES PAGE]
+   =============================================== */
+section.services-page {
+    @extend section.features;
+
+    .item {
+        &:hover {
+            border: 2px solid $color-primary;
+        }
+    }
+
+    a[class*="btn"] {
+        margin-right: 15px;
+        &.has-shadow {
+            &:hover {
+                color: $color-secondary !important;
+            }
+        }
+    }
+}

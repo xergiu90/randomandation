@@ -1,0 +1,153 @@
+/* ===============================================
+     DEPENDENCY SECTION [PRICES PAGE]
+   =============================================== */
+section.dependency {
+    header {
+        h2 {
+            font-weight: 500;
+            font-size: 2em;
+        }
+    }
+}
+
+/* DEPENDENCY SECTION MEDIAQUERY ------------------ */
+@media (max-width: $screen-lg) {
+    section.dependency {
+        div[class*="col-"] {
+            margin-bottom: 40px;
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+
+
+
+/* ===============================================
+     PRICES TABLES SECTION [PRICES PAGE]
+   =============================================== */
+section.prices-tables {
+
+    .level {
+        padding: 100px 0;
+
+        &:nth-of-type(odd) {
+            @extend .gray-bg;
+        }
+    }
+
+    h2 {
+        font-weight: 500;
+        font-family: $base-font-family;
+        span {
+            font-size: 0.5em;
+            line-height: 14px;
+            display: block;
+            font-weight: 300;
+            color: #999;
+        }
+    }
+    .number {
+        color: $color-secondary;
+        font-size: 4em;
+        font-weight: 600;
+        line-height: 47px;
+        margin-right: 8px;
+    }
+
+    .table-holder {
+        border: 1px solid $color-primary;
+    }
+    .table {
+        margin-bottom: 0;
+        th, td {
+            font-weight: 400 !important;
+            font-family: $base-font-family !important;
+            color: #333;
+            text-align: center !important;
+            border: 1px solid #eee;
+        }
+
+        &.table-striped tbody tr:nth-of-type(even) {
+            background: #f5f5f5 !important;
+        }
+        &.table-striped tbody tr:nth-of-type(odd) {
+            background: #fff !important;
+        }
+
+        thead {
+            background: #fff;
+
+            th {
+                font-weight: 500 !important;
+                z-index: 999;
+            }
+        }
+
+        tbody {
+            color: #999;
+            z-index: 998;
+        }
+    }
+
+}
+
+
+/* ===============================================
+     BANK ACCOUNTS SECTION [PRICES PAGE]
+   =============================================== */
+section.bank-accounts {
+
+    header {
+        h2 {
+            font-weight: 500;
+            font-size: 2em;
+        }
+    }
+
+    div[class*="col-"] {
+        margin-bottom: 40px;
+    }
+
+    .account {
+        border: 1px solid $color-primary;
+        height: 100%;
+
+        .card-header {
+            height: 60px;
+        }
+        img {
+            &.visa {
+                height: 60px;
+            }
+            &.western-union {
+                width: 120px;
+            }
+            &.paypal {
+                height: 80px;
+            }
+            &.bank-muskat {
+                height: 40px;
+            }
+        }
+        .card-body {
+            padding: 20px 40px;
+            font-size: 0.95em;
+
+            ul {
+                margin-bottom: 0;
+            }
+
+            li {
+                padding: 7px 0;
+                color: #888;
+                font-weight: 400;
+                span {
+                    color: #353535;
+                    margin-right: 5px;
+                }
+            }
+        }
+    }
+}

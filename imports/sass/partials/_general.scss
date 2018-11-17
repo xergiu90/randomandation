@@ -1,0 +1,276 @@
+/* Google Fonts [Montserrate for heading & Poppins for text] */
+@import "https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,800,900|Poppins:300,400,500,600,700";
+
+
+/* ===================================================
+        GENERAL STYLE
+    ================================================= */
+* {
+    outline: none !important;
+}
+a, a:focus, a:hover {
+    display: inline-block;
+    text-decoration: none;
+    color: inherit;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+}
+span, i {
+    display: inline-block;
+}
+body {
+    font-family: $base-font-family !important;
+    position: relative;
+    padding-top: 80px;
+
+    &.modal-open {
+        padding-right: 5px !important;
+    }
+}
+button {
+    cursor: pointer;
+    border: 1px solid transparent;
+}
+section {
+    padding: $section-padding 0;
+    position: relative;
+}
+section header {
+    margin-bottom: 70px;
+}
+
+.animsition {
+    overflow: hidden;
+}
+.scrollUp {
+    transform: translateY(-110%);;
+}
+@include scrollbars(5px, $color-secondary, #fff);
+
+
+.modal {
+    z-index: 9999;
+}
+
+/*Phone Picker Plugin*/
+.intl-tel-input {
+    width: 100%;
+}
+.selected-flag {
+    width: 60px !important;
+    padding-left: 20px !important;
+}
+.country-name, .intl-tel-input .country-list .country .dial-code {
+    font-weight: 300 !important;
+    color: #333 !important;
+    font-size: 0.95em !important;
+}
+.intl-tel-input .country-list {
+    max-height: 300px;
+}
+.intl-tel-input .country-list .country {
+    padding: 10px;
+}
+input#phone {
+    padding-left: 70px !important;
+}
+
+/** TYPOGRAPHY **/
+h1, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6, {
+    font-family: $base-font-family;
+    margin: 10px 0;
+    font-weight: $heading-font-weight;
+}
+h2 {
+    font-family: $secondary-font-family;
+    margin: 10px 0;
+    font-weight: $heading-font-weight-bold;
+}
+h1, .h1, .display-1 { font-size: 4em;   }
+h2, .h2, .display-2 { font-size: 2.2em; }
+h3, .h3, .display-3 { font-size: 1.35em; }
+h4, .h4, .display-4 { font-size: 1.2em; }
+h5, .h5, .display-5 { font-size: 1em;   }
+h6, .h6, .display-6 { font-size: 0.8em; }
+
+h2 {
+    position: relative;
+    line-height: 1.2em;
+
+    &.has-lines {
+        display: inline-block;
+        line-height: 1;
+        transform: translateX(20px);
+
+        &::before, &::after {
+            content: '';
+            width: 6px;
+            height: 100%;
+            display: inline-block;
+            @include linear-gradient(to top, $color-primary, $color-secondary);
+            position: absolute;
+            bottom: 0;
+            left: -20px;
+        }
+        &::after {
+            width: 3px;
+            left: -12px;
+        }
+    }
+
+    span.text-primary {
+        font-weight: 300;
+        display: block;
+        font-family: $base-font-family;
+    }
+}
+
+.lead {
+    font-size: 1.1em;
+    color: #333;
+    line-height: 1.9em;
+}
+
+.breadcrumb {
+    background: none;
+    text-align: center;
+    a {
+        color: $color-primary;
+        text-transform: uppercase;
+    }
+    li {
+        text-transform: uppercase;
+        font-weight: 400;
+        &.active {
+            color: #999;
+        }
+        &::before {
+            color: #999;
+            font-size: 0.8em;
+        }
+    }
+}
+
+/* Bootstrap Select override styles */
+.bootstrap-select.show>.dropdown-menu>.dropdown-menu {
+    display: block;
+}
+.bootstrap-select > .dropdown-menu > .dropdown-menu li.hidden {
+    display:none;
+}
+.bootstrap-select > .dropdown-menu > .dropdown-menu li a {
+    display: block;
+    width: 100%;
+    padding: 3px 1.5rem;
+    clear: both;
+    font-weight: 400;
+    color: #333;
+    text-align: inherit;
+    white-space: nowrap;
+    background: 0 0;
+    border: 0;
+    font-weight: 300;
+    outline: none;
+
+    &:hover {
+        background: #eee;
+    }
+}
+.bootstrap-select .dropdown-menu {
+    margin: 0 !important;
+    transform: none !important;
+    width: 100% !important;
+    &::before, &::after {
+        display: none !important;
+    }
+}
+.dropdown, .bootstrap-select {
+    .dropdown-menu {
+        border-radius: 0;
+        border: 0;
+        box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1), -1px -1px 2px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s;
+        margin-top: 15px;
+        transform: translateY(30px);
+        color: #333;
+        font-size: 1em;
+        min-width: 200px;
+
+        &.open {
+            max-height: 230px !important;
+        }
+
+        &::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 0;
+            border-left: 7px solid transparent;
+            border-right: 7px solid transparent;
+            border-bottom: 7px solid #fff;
+            @include position(absolute, -5px, $left: 30px);
+        }
+        &::before {
+            content: '';
+            display: block;
+            width: 0;
+            height: 0;
+            border-left: 7px solid transparent;
+            border-right: 7px solid transparent;
+            border-bottom: 8px solid #eee;
+            @include position(absolute, -8px, $left: 30px);
+        }
+        a {
+            color: inherit;
+            &:hover {
+                background: $color-primary;
+                color: #fff;
+            }
+        }
+
+        a {
+            padding: 10px 20px;
+        }
+    }
+}
+.dropdown-toggle {
+    background: none;
+    outline: none;
+    border: 1px solid #ddd;
+    border-radius: 0;
+    width: 100%;
+
+    span {
+        color: #555;
+    }
+
+    &::after {
+        border: none !important;
+        content: '\f107';
+        vertical-align: baseline;
+        font-family: 'FontAwesome';
+        margin-left: 0;
+    }
+}
+.bootstrap-select .dropdown-toggle:focus {
+    outline: none !important;
+    outline-offset: 0 !important;
+}
+.bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn) {
+    width: 100%;
+}
+
+/* GENERAL MEDIA QUERY ------------------------------------- */
+@media (max-width: $screen-md) {
+    body {
+        font-size: 14px;
+    }
+    h1 {
+        font-size: 2.5em !important;
+    }
+    h2 {
+        font-size: 1.9em !important;
+    }
+
+}

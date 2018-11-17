@@ -1,0 +1,98 @@
+/* ===============================================
+     QUESTIONS SECTION [FAQ PAGE]
+   =============================================== */
+.subject {
+    margin-bottom: 80px;
+    &:last-of-type {
+        margin-bottom: 0;
+    }
+
+    h2 {
+        font-size: 1.9em;
+    }
+    .icon {
+        width: 45px;
+        margin-right: 10px;
+    }
+}
+
+.questions {
+
+    .question {
+        margin-bottom: 40px;
+        margin-left: 50px;
+    }
+
+    .question-header {
+        background: #fafafa;
+        z-index: 100;
+        position: relative;
+        text-align: center;
+        font-size: 0.95em;
+
+        h3 {
+            font-size: 1.1em;
+            font-weight: 400;
+        }
+
+        a {
+            padding: 10px 20px;
+            color: #333;
+            border-left: 2px solid transparent;
+            &::before {
+                content: '\68';
+                display: block;
+                height: 30px;
+                @include linear-gradient(to top, $color-secondary, $color-primary);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                margin-left: 20px;
+                position: absolute;
+                top: calc(50% - 15px);
+                right: 20px;
+                font-size: 1.2em;
+                font-family: "vuapaper" !important;
+            }
+
+            &[aria-expanded="true"] {
+                border-left: 2px solid $color-primary;
+
+                &::before {
+                    content: '\67';
+                }
+            }
+
+            h4 {
+                line-height: 1.5em;
+                text-align: left !important;
+            }
+        }
+    }
+
+    .question-block {
+        padding: 40px;
+        color: #777;
+        line-height: 1.9em;
+        font-weight: 300;
+        background: #fafafa;
+        z-index: 99;
+        position: relative;
+        font-size: 1.05em;
+    }
+
+
+    .question-number {
+        min-width: 30px;
+        max-width: 30px;
+        min-height: 30px;
+        max-height: 30px;
+        line-height: 30px;
+        border-radius: 50%;
+        @include linear-gradient(to left, $color-secondary, $color-primary);
+        color: #fff;
+        margin-right: 20px;
+        text-align: center;
+        font-size: 0.9em;
+        font-weight: 400;
+    }
+}

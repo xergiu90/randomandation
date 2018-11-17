@@ -1,0 +1,401 @@
+/* ===============================================
+     TEMPLATE HELPERS [Premade Classes to immediate use]
+   =============================================== */
+.shadow-on-hover {
+    transition: all 0.5s;
+    &:hover {
+        box-shadow: 0px 0px 30px 0px rgba(123, 123, 123, 0.20);
+    }
+}
+
+.shadow-light-on-hover {
+    transition: all 0.5s;
+
+    &:hover {
+        box-shadow: 0px 0px 15px 0px rgba(123, 123, 123, 0.27);
+    }
+}
+
+.text-primary {
+    color: $color-primary !important;
+}
+a.text-primary {
+    &:hover {
+        color: darken($color-primary, 5%) !important;
+    }
+}
+.text-secondary {
+    color: $color-secondary !important;
+}
+a.text-secondary {
+    &:hover {
+        color: darken($color-secondary, 5%) !important;
+    }
+}
+
+.text-big {
+    font-size: 1.4em;
+    line-height: 1.8em;
+    font-weight: 300;
+}
+
+.has-shadow {
+    box-shadow: 0px 0px 30px 0px rgba(123, 123, 123, 0.20);
+}
+
+.has-shadow-light {
+    box-shadow: 0px 0px 15px 0px rgba(123, 123, 123, 0.27);
+}
+
+.has-shadow-lighter {
+    box-shadow: 0px 2px 10px 0px rgba(123, 123, 123, 0.17);
+}
+
+.gray-bg {
+    background: #fafafa;
+}
+
+.wide-vertical {
+    padding-top: 8px !important;
+    padding-bottom: 8px !important;
+}
+
+.card {
+    @extend .has-shadow;
+    border: none;
+    border-radius: 0;
+
+    .card-header {
+        @extend .has-shadow-light;
+        background: #fff;
+        z-index: 999;
+        border: none;
+    }
+    .card-body {
+        background: #fff;
+        padding: 20px;
+        z-index: 998;
+    }
+}
+
+
+.btn-template {
+    padding: 5px 30px;
+    color: #fff;
+    border-radius: 50px;
+    @include linear-gradient(to left, $color-primary, $color-secondary);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+
+    &::before {
+        content: '';
+        background: #fff;
+        display: inline-block;
+        width: 110%;
+        height: 110%;
+        border-radius: 50px;
+        position: absolute;
+        top: -5%;
+        left: 0;
+        transform: translateX(-120%);
+        transition: all 0.4s;
+        color: $color-secondary;
+        z-index: -1;
+    }
+
+    &:hover, &:focus {
+        color: $color-secondary !important;
+        &::before {
+            transform: translateX(-5%);
+        }
+    }
+}
+
+.btn-template-outlined {
+    padding: 3px 30px;
+    color: #fff;
+    background: none;
+    border-radius: 50px;
+    border: 1px solid $color-secondary;
+    color: $color-secondary;
+    font-weight: 400;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+
+    &::before {
+        content: '';
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        border-radius: 50px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: translateX(-120%);
+        transition: all 0.4s;
+        @include linear-gradient(to left, $color-primary, $color-secondary);
+        z-index: -1;
+    }
+
+    &:hover, &:focus {
+        color: #fff;
+        border-color: transparent;
+        &::before {
+            transform: none;
+        }
+    }
+}
+
+.btn-gradient {
+    z-index: 1;
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    display: block;
+    font-weight: 400;
+    color: #333;
+    padding: 2px 6px;
+    margin-right: 10px;
+    margin-bottom: 0 !important;
+    cursor: pointer;
+    &::before {
+        content: '';
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        @include linear-gradient(to right, $color-secondary, $color-primary);
+        transition: opacity 0.3s;
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+    }
+    &:hover, &.active {
+        color: #fff !important;
+        &::before {
+            opacity: 1;
+            @extend .has-shadow;
+        }
+    }
+}
+
+.wide {
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.text-template {
+    font-size: 1.2em;
+    line-height: 1.6em;
+    color: #777;
+    font-weight: 300;
+}
+
+.has-gradient {
+    color: #fff;
+    @include linear-gradient(top left, $color-secondary, $color-primary);
+}
+
+.padding-small {
+    padding: 80px 0 !important;
+}
+.no-padding-top {
+    padding-top: 0 !important;
+}
+.no-padding-bottom {
+    padding-bottom: 0 !important;
+}
+.no-padding {
+    padding: 0;
+}
+
+.has-ellipsis {
+    display: inline-block;
+    line-height: 1;
+    transform: translateX(0);
+    padding-left: 30px;
+
+    &::before {
+        content: '';
+        width: 17px;
+        height: 17px;
+        display: inline-block;
+        background: $color-primary;
+        border: 4px solid lighten($color-primary, 25%);
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-radius: 50%;
+    }
+}
+
+.no-margin {
+    margin: 0 !important;
+}
+.heading-bold {
+    font-weight: 600 !important;
+}
+.heading-light {
+    font-weight: 400 !important;
+    font-family: $base-font-family !important;
+}
+
+.has-pattern {
+    position: relative;
+    z-index: 1;
+    &::before {
+        opacity: 0.05;
+        content: '';
+        width: 100%;
+        height: 100%;
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+    }
+}
+.has-pattern-stripes {
+    @extend .has-pattern;
+    &::before {
+        background: url(../img/pattern.png) repeat;
+        opacity: 0.03;
+    }
+}
+.has-pattern-memphis {
+    @extend .has-pattern;
+    &::before {
+        background: url(../img/pattern-2.png) repeat;
+        opacity: 0.08;
+    }
+}
+.pattern-memphis-on-hover {
+    @extend .has-pattern-memphis;
+    &::before {
+        opacity: 0;
+        transition: all 0.5s;
+    }
+
+    &:hover {
+        &::before {
+            opacity: 0.08;
+        }
+    }
+}
+
+.underlined-gradient:not(span) {
+    border-bottom: 2px solid currentColor;
+    border-bottom: 2px solid transparent;
+    -moz-border-image: -moz-linear-gradient(top, $color-primary 0%, $color-secondary 100%);
+    -webkit-border-image: -webkit-linear-gradient(top, $color-primary 0%, $color-secondary 100%);
+    border-image: linear-gradient(to left, $color-primary 0%, $color-secondary 100%);
+    border-image-slice: 1;
+    display: inline-block;
+}
+
+
+.social-btn {
+    padding-top: 4px !important;
+    padding-bottom: 4px !important;
+    transition: all 0.3s;
+    border-radius: 50px;
+
+    i {
+        padding-right: 8px;
+    }
+
+    &.social-facebook {
+        border-color: $color-facebook !important;
+        color: $color-facebook !important;
+        &:hover {
+            color: #fff !important;
+            background: $color-facebook !important;
+        }
+    }
+    &.social-twitter {
+        border-color: $color-twitter !important;
+        color: $color-twitter !important;
+        &:hover {
+            color: #fff !important;
+            background: $color-twitter !important;
+        }
+    }
+    &.social-instagram {
+        border-color: $color-instagram !important;
+        color: $color-instagram !important;
+        &:hover {
+            color: #fff !important;
+            background: $color-instagram !important;
+        }
+    }
+    &.social-google-plus {
+        border-color: $color-google-plus !important;
+        color: $color-google-plus !important;
+        &:hover {
+            color: #fff !important;
+            background: $color-google-plus !important;
+        }
+    }
+}
+
+
+.text-bg, .text-bg-gray {
+    font-size: 11em;
+    font-family: $secondary-font-family;
+    font-weight: 800;
+    color: #fff;
+    opacity: 0.05;
+    @include position(absolute, $top: 50%, $left: 50%);
+    transform: translate(-50%, -50%);
+    width: 2000px;
+    text-align: center;
+    text-transform: uppercase;
+    -webkit-user-select: none;
+    -webkit-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    cursor: default;
+}
+
+.text-bg-gray {
+    color: #333;
+}
+
+.heading-bg-text {
+    font-size: 2.5em;
+    font-family: $secondary-font-family;
+    font-weight: 800;
+    color: #333;
+    opacity: 0.03;
+    position: absolute;
+    top: -30px;
+    text-transform: uppercase;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: inherit;
+    -webkit-user-select: none;
+    -webkit-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    cursor: default;
+    z-index: -1;
+}
+
+.payment-link {
+    height: 50px;
+    padding: 0 30px;
+    background: #f5f5f5;
+    border-radius: 0;
+    margin-right: 8px;
+    margin-bottom: 10px;
+    border: 1px solid transparent;
+    cursor: pointer;
+}
+input:checked + .payment-link {
+    border: 1px solid $color-primary;
+    background: #fff;
+    @extend .has-shadow;
+}

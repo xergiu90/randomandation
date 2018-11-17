@@ -1,0 +1,63 @@
+/* ===============================================
+     LOGN & SIGNUP SECTION [LOGN & SIGNUP PAGE]
+   =============================================== */
+section.login, section.signup {
+    .form-holder {
+        padding: 60px 50px;
+        background: #fff;
+        z-index: 9997;
+    }
+
+    form {
+        margin-top: -240px;
+        padding: 60px 50px;
+        background: #fff;
+    }
+
+    .divider {
+        margin: 50px 0;
+        color: #777;
+
+        &::before, &::after {
+            content: '';
+            width: 1000px;
+            height: 1px;
+            background: #eee;
+            display: block;
+        }
+
+        .text {
+            min-width: 140px;
+            text-align: center;
+        }
+    }
+
+    .alternate-login {
+        margin: 20px 0;
+    }
+
+    .social-btn {
+        margin-right: 10px;
+        display: block;
+        width: 100%;
+        margin-bottom: 10px;
+        &:last-of-type {
+            margin-right: 0;
+        }
+    }
+
+    .helpers {
+        color: #999;
+        margin: 30px 0 0;
+    }
+}
+
+
+/* LOGIN & SIGNUP SECTION MEDIAQUERY ------------------- */
+@media (max-width: $screen-md) {
+    section.login, section.signup {
+        .social-btn {
+            margin-right: 0;
+        }
+    }
+}

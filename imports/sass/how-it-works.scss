@@ -1,0 +1,72 @@
+/* ===============================================
+     STEPS SECTION [HOW IT WORKS PAGE]
+   =============================================== */
+section.steps {
+    @extend section.features;
+
+    div[class*="col-"] {
+        margin-bottom: 120px !important;
+        position: relative;
+
+        .icon {
+            width: 60px;
+            margin-bottom: 40px;
+            margin-top: 0;
+        }
+
+        &::before {
+            content: '';
+            display: block;
+            width: 20px;
+            height: 20px;
+            background: #eee;
+            border-radius: 50%;
+            position: absolute;
+            bottom: 25px;
+            left: calc(50% - 10px);
+            z-index: 999;
+        }
+        &::after {
+            content: '';
+            display: block;
+            width: 2px;
+            height: 200px;
+            background: #eee;
+            position: absolute;
+            bottom: -175px;
+            left: calc(50% - 1px);
+        }
+
+        &:last-of-type {
+            margin-bottom: 0 !important;
+            &::before, &::after {
+                display: none;
+            }
+        }
+    }
+    .step {
+        padding: 70px 50px !important;
+        position: relative;
+        overflow: hidden;
+
+        h3 {
+            font-size: 1.9em;
+            font-weight: 600;
+        }
+
+        p {
+            font-size: 1.05em !important;
+            line-height: 1.9em;
+        }
+    }
+
+    .step-number {
+        font-size: 5em;
+        position: absolute;
+        top: 0;
+        left: 50px;
+        color: $color-secondary;
+        font-weight: 600;
+        transform: translateY(-50%);
+    }
+}
