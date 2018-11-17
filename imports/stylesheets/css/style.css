@@ -89,6 +89,10 @@ body {
   padding-left: 20px !important;
 }
 
+.align-items-stetch {
+  padding-top: 50px;
+}
+
 .country-name, .intl-tel-input .country-list .country .dial-code {
   font-weight: 300 !important;
   color: #333 !important;

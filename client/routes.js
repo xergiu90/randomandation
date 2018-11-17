@@ -28,3 +28,12 @@ FlowRouter.route('/friends',{
 			}
 	   
 });
+
+FlowRouter.route('/profile',{
+
+    name:'profile',
+    action(){
+        BlazeLayout.render('layout',{ main:'friends'});
+    }
+
+});
